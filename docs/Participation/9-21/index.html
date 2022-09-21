@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>9-19 Participation (fake form)</title>
+</head>
+<body>
+        <h1>Hello, World! New web page, who is this?</h1>
+        <!-- <img src="cutecow.jpg" alt="cute cow"> -->
+
+        <!-- reminder - no method attribute specified, so it's GET-->
+        <form action="submission.html">
+                <p>
+                        <label for="first">First Name</label>
+                        <input type="text" id="first" name="first" placeholder="First name only please">
+                </p>
+
+                <p>
+                        <label for="last">Last Name</label>
+                        <input type="text" id="first" name="last" placeholder="Last name only please">
+                </p>
+
+                <p>
+                        <label for="area">Tell me a story...</label>
+                        <textarea id="area" name="area" rows="3" placeholder="multiline text"></textarea>
+                </p>
+
+                <p>
+                        <label for="check">Please check this box</label>
+                        <input type="checkbox" id="check" name="check">
+                </p>
+
+                <p>
+                        <label for="radio">Please check this radio button</label>
+                        <input type="radio" id="radio" name="radio">
+                </p>
+                <p>
+                        <label for="rating">Scale</label>
+                        <input type="radio" id="rating" name="rating" value="0">
+                        <input type="radio"" name="rat ing" value="1">
+                        <input type="radio"" name="rat ing" value="2">
+                        <input type="radio"" name="rat ing" value="3">
+                        <input type="radio"" name="rat ing" value="4">
+                </p>
+
+                <label for="agree">It was funny</label>
+                <select name="agree" id="agree">
+                        <option value="Yes">I agree</option>
+                        <option value="Maybe">I don't know</option>
+                        <option value="No">I disagree</option>
+                </select>
+                
+
+                <p>
+                        <input type="submit" value="Click Me">
+                </p>
+        </form>
+</body>
+
+<footer>
+        <!--block-->
+        <a href="../../">Back to index</a>
+    </footer>
+</html>
