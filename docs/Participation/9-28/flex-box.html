@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+
+    <style>
+        #container {
+            display:flex;
+            flex-direction: row;
+            height:500px;
+        }
+        .header {
+            display:flex;
+            padding: 10px;
+            text-align: center;
+            background-color: gray;
+        }
+        .introduction {
+            background-color: green; 
+        }
+        .content {
+            background-color: blue;
+            flex-grow: 2;
+        }
+        .footer {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="heado">
+        <div class="header">
+            Logo - Navigation Section
+        </div>
+    </div>
+    
+
+    <div id="container">
+        <div class="introduction">
+            Introduction Content
+        </div>
+        <div class="content">
+            A lot of stuff here
+        </div>
+    
+    </div>
+
+    <div id="other">
+        <div class="footer">
+            <footer>
+                <!--block-->
+                <a href="../">Back to 9-28</a>
+            </footer>
+        </div>
+    </div>
+
+</body>
+</html>
