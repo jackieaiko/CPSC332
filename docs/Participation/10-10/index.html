@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participation 10-7</title>
+
+    <script>
+        window.onload  = function() {
+            var myInt = "42"; // function level scope
+            let myOtherInt = 9001; // block level scope
+            anotherInt = 9000; // global scope... avoid this
+
+            window.location
+
+            //alert("I'm annoying");
+
+            const SOME_VALUE = 3.14159;
+
+            console.log("this is a console message");
+            prompt("DO you want to play a game?")
+
+            alert("You siad: ")
+
+            if (true) {
+                var y = 41;
+            }
+
+            let number = 2;
+            let aString = "2"
+            console.log(number + 2);
+            consol.log(number + parseInt(aString));
+
+            if (number === 10) { //its an integer and same data value
+                var y = 41;
+            }
+
+            if(underfined) {
+                console.log("True");
+            }
+
+            function printTwoThingsToTheConsole(message, someNumber) {
+                console.log("The message is: " + message + "and domeNumber is" + someNumber);
+            }
+
+            printTwoThingsToTheConsole("Hello", 42);
+
+            let myResult = printTwoThingsToTheConsole(42, "This");
+            console.log(myResult);
+
+            (function () {
+                console.log("Hello!");
+            })();
+
+            var myArray = [1,2,3,4];
+
+            for(let i = 0; i < myArray.length; i++) {
+                console.log(myArray[i]);
+            }
+
+            for(const myVal of myArray) {
+                console.log(myVal);
+            }
+
+            myArray.forEach(function(){
+                console.log(item + " " + i);
+            });
+
+            var myObject = {
+                name: "defaultName",
+                someNumber: 42,
+                anArray: [1,2,3,4,5],
+
+                echo: function(value) {
+                    console.log(value)
+                },
+
+                get numberPlusOne() {
+                    return this.someNumber + 1;
+                }
+            };
+
+            console.log(myObject.name);
+
+            var currentDate = {
+                dateTime: null
+                
+            }
+            document.getElementById("update-date").addEventListener("click", pizzaTime);
+
+            function pizzaTime() {
+                console.log("Is it pizza time");
+            }
+
+
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Even More Javascript, Yay!</h1>
+
+    <div>
+        <p>
+            <span id="data-text">Click the button</span>
+        </p>
+        <p>
+            <button id="update-date">Click to see current date time!</button>
+        </p>
+    </div>
+    <a href="../../">Back to index</a>
+</body>
+</html>
