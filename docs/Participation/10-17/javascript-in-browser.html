@@ -51,30 +51,6 @@
                 let currDateTime = new Date();
                 console.log(currDateTime);
             }
-
-            function addDiv() {
-                if(document.getElementById("temp-div") == null) {
-                    let newDiv = document.createElement("div");
-                    newDiv.id = "temp-div";
-                    newDiv.style = "border: 2px solid red;";
-                    document.getElementById("container").appendChild("temp-div");
-
-                    let newP = document.createElement("p");
-                    let date = new Date;
-                    newP.textContent = `hello I created at ${date}`;                                
-                }
-            }
-
-            documend.getElementById("temp-div").addEventListener("click", () => {
-                alert("temp-div clicked");
-            });
-
-            // solution: attach event listener to a containing element that is static
-            document.getElementById("container").addEventListener("click", function (e) {
-                if(e.target.id == "temp-div") {
-                    alert("dynamic temp-div clicked!");
-                }
-            });
         }//end of onload function
     </script>
 </head>
@@ -117,7 +93,7 @@
         </div>
     </fieldset>
 
-    <a href="../">Back to 10-17</a>
+    <a href="../">Back to 10-12</a>
 </body>
 
 </html>
