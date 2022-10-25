@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        legend {
+            padding: 2%;
+            margin: 10%;
+            background-color: purple;
+            color: white;
+        }
+        fieldset {
+            border-width: 20px 20px;
+            border-style:dotted;
+            border-color: gray;
+            margin: 8%;
+            background-color: orange;
+        }
+        form {
+            padding: 20%;
+            margin: auto;
+            display:grid;
+        }
+    </style>
+
+    <script>
+        let FirstNameElement = document.getElementById("fname");
+        let LastNameElement = document.getElementById("lname");
+        let MiddleNameElement = document.getElementById("mname");
+
+        if(localStorage.getItem("fname")) {
+            FirstNameElement.value = localStorage.getItem("fname")
+        }
+        document.getElementById("saveBtn1").addEventListener("click", function() {
+            localStorage.setItem("fname", FirstNameElement.value);
+        });
+
+        if(localStorage.getItem("lname")) {
+            LastNameElement.value = localStorage.getItem("lname")
+        }
+        document.getElementById("saveBtn2").addEventListener("click", function() {
+            localStorage.setItem("lname", LastNameElement.value);
+        });
+
+        if(localStorage.getItem("mname")) {
+            MiddleNameElement.value = localStorage.getItem("mname")
+        }
+        document.getElementById("saveBtn3").addEventListener("click", function() {
+            localStorage.setItem("mname", MiddleNameElement.value);
+        });
+
+        
+
+    </script>
+
+</head>
+<body>
+    <fieldset>
+        <legend>CPSC 332 10/21 Participation</legend>
+        <form action="submission.html" method="post">
+            <label>First Name:
+                <input type="text" id="fname" name="fname">
+                <input type="button" value="Save Data" id="saveBtn1">
+            </label> 
+
+            <p>
+                <label>Last Name:
+                    <input type="text" id="lname" name="lname">
+                    <input type="button" value="Save Data" id="saveBtn2">
+                </label>
+            </p>
+
+                <label>Middle Name:
+                    <input type="text" id="mname" name="mname">
+                    <input type="button" value="Save Data" id="saveBtn3">
+                </label>
+
+
+            <p>
+                <input type="submit" value="Submit Response">
+            </p>
+            
+        </form>
+    </fieldset>
+
+    <a href="../../">Back to index</a>
+</body>
+</html>

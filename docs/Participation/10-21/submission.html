@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+
+        <style>
+            table, th, td {
+                border: 1px solid blue;
+            }
+        </style>
+
+        <script>
+            let FirstName = localStorage.getItem("fname");
+            let LastName = localStorage.getItem("lname");
+            let MiddleName = localStorage.getItem("mname");
+
+            var table = document.getElementById("tableVals");
+            var row = table.insertRow();
+
+            var cell1 = row.insertCell();
+            var cell2 = row.insertCell();
+            var cell3 = row.insertCell();
+
+            cell1.innerHTML = FirstName;
+            cell2.innerHTML = LastName;
+            cell3.innerHTML = MiddleName;
+
+        </script>
+    </head>
+    <body>
+        <table id="tableVals">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Middle Name</th>
+            </tr>
+
+        </table>
+        
+        <a href="index.html">Back to prev page</a>
+    </body>
+</html>
