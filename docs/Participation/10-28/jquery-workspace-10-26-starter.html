@@ -53,28 +53,52 @@
             }
 
             function callbackFunction() {
-                console.log("DIv clicked: HTML content JS")
+                console.log("Div clicked: HTML content JS" + this.innnerHTML)
+            }
+            function callbackFunction() {
+                console.log("Div clicked: HTML content JS" + $(this).html())
             }
             //we need a callback function!
 
             //let's try a different event
             //JavaScript Method
 
-
-
+            // let headers = document.getElementById("h1")
+            // for (const element of headers) {
+            //     element.addEventListener("dblclick", function() {
+            //         console.log("double clicked detected on h1 element");
+            //         $("body").append($("<h2>").text("New h2!"));
+            //     });
+            // }
             //JQuery Method
-
+            $("h1").on("dvlclick", function() {
+                console.log("double clicked detected on h1 element");
+                $("body").append($("<h2>").text("New h2!"));
+            });
+            
 
             //#7. Styles!
             //method 1: property-value pair
-
+            $("div").css("border", "2px double purple");
             //method 2: object literal
+            $("div").css({
+                padding: "10px",
+                borderRadius: "20px",
+                "margin-top": "10px",
+                marginBottom: "blue"
+            });
 
 
             //Activity (Using JQuery):
             //1. Center the button created in this lecture using the property-value pair CSS method 1 demonstrated during lecture.
             //2. Apply a background color, border, padding, and margin (your choice) to the ordered list using the object literal method demonstrated during lecture
             //3. Add an event listener to the ordered list list items so the color changes as you hover over each individual list item (color is your choice).
+
+            $("div").attr("class", "draggable ui-widget-content");
+
+            $(function() {
+                $(".draggable").draggable();
+            });
 
         }); //end of ready function 
     </script>
@@ -88,6 +112,7 @@
 
         </ol>
     </div>
+    <h1>hey there</h1>
 
     <a href="../../">Back to index</a>
 </body>
