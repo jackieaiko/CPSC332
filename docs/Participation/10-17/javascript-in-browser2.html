@@ -4,10 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JavaScript in the Browser</title>
     <style>
+        #container {
+            border: 2px dashed blue;
+            background-color: cornsilk;
+            margin: 15px;
+            padding: 15px;
+            height: 175px;
+        }
 
+        div {
+            text-align: center;
+        }
     </style>
+    <!-- https://bitsofco.de/async-vs-defer/ -->
     <!-- async loads the page at the same time as the script -->
     <!-- <script src="script.js" async></script> -->
     <!-- defer loads the script at the same time BUT script is not processed until the page loads-->
@@ -15,9 +26,9 @@
     <script>
         window.onload = function () {
 
-
             //document represents the entire DOM
             var thisDocument = document.getElementById("container");
+            console.log(thisDocument.innerHTML);
             //window object
             console.log(window.innerWidth);
             console.log(window.innerHeight);
@@ -31,8 +42,10 @@
             var firstDiv = document.querySelector("body div");
 
             //event handler
-            document.getElementById("date-button-start").addEventListener("click", startClock);
-            document.getElementById("date-button-stop").addEventListener("click", stopClock);
+            document.getElementById("date-button-start")
+                .addEventListener("click", startClock);
+            document.getElementById("date-button-stop")
+                .addEventListener("click", stopClock);
 
             var clock = null;
 
@@ -40,17 +53,16 @@
                 console.log("start clock clicked");
                 clock = setInterval(updateClock, 1000);
             }
+
             function stopClock() {
                 console.log("stop clock clicked");
                 clearInterval(clock);
             }
+
             function updateClock() {
                 console.log("I'm a clock!");
             }
-            function displayTime() {
-                let currDateTime = new Date();
-                console.log(currDateTime);
-            }
+
         }//end of onload function
     </script>
 </head>
@@ -58,7 +70,15 @@
 <body>
     <div id="container">
         This is div content
+        <div id="temp-div" style="border: 2px solid red; padding: 10px; border-radius: 30px; margin: 15px;">
+            <p style="background-color: bisque;">Hello, World! (Div)</p>
+        </div>
     </div>
+    <button id="remove-div">Remove Div</button>
+    <button id="add-div">Add Div</button>
+    <!-- <div id="container">
+        This is another container
+    </div> -->
     <div>
         <ul class="unordered-list">
             <li>Item 1</li>
@@ -92,8 +112,7 @@
             </p>
         </div>
     </fieldset>
-
-    <a href="../../index.html">Back to index</a>
+    <a href="../../index.html">Back to the participation index</a>
 </body>
 
 </html>

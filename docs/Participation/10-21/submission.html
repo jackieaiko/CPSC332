@@ -16,20 +16,13 @@
         </style>
 
         <script>
-            let FirstName = localStorage.getItem("fname");
-            let LastName = localStorage.getItem("lname");
-            let MiddleName = localStorage.getItem("mname");
+        window.addEventListener("DOMContentLoaded", domLoaded);
+        function domLoaded() {
 
-            var table = document.getElementById("tableVals");
-            var row = table.insertRow();
-
-            var cell1 = row.insertCell();
-            var cell2 = row.insertCell();
-            var cell3 = row.insertCell();
-
-            cell1.innerHTML = FirstName;
-            cell2.innerHTML = LastName;
-            cell3.innerHTML = MiddleName;
+            document.getElementById("label1").innerHTML = localStorage.getItem("fname");
+            document.getElementById("label2").innerHTML = localStorage.getItem("lname");
+            document.getElementById("label3").innerHTML = localStorage.getItem("mname");
+        }
 
         </script>
     </head>
@@ -39,6 +32,11 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Middle Name</th>
+            </tr>
+            <tr>
+                <td id="label1"></td>
+                <td id="label2"></td>
+                <td id="label3"></td>
             </tr>
 
         </table>

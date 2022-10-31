@@ -25,43 +25,79 @@
             margin: auto;
             display:grid;
         }
+
     </style>
 
+    <script src="validate.js" defer></script>
     <script>
-        let FirstNameElement = document.getElementById("fname");
-        let LastNameElement = document.getElementById("lname");
-        let MiddleNameElement = document.getElementById("mname");
+        window.addEventListener("DOMContentLoaded", domLoaded);
+        function domLoaded() {
 
-        if(localStorage.getItem("fname")) {
-            FirstNameElement.value = localStorage.getItem("fname")
-        }
-        document.getElementById("saveBtn1").addEventListener("click", function() {
-            localStorage.setItem("fname", FirstNameElement.value);
+            let FirstNameElement = document.getElementById("fname");
+            let LastNameElement = document.getElementById("lname");
+            let MiddleNameElement = document.getElementById("mname");
+
+            let Button1Element = document.getElementById("saveBtn1");
+            let Button2Element = document.getElementById("saveBtn2");
+            let Button3Element = document.getElementById("saveBtn3");
+
+            let form = document.getElementById("form");
+
+        Button1Element.addEventListener("click", () => {
+            if(FirstNameElement.value.length > 0) {
+                sessionStorage.setItem("fname", FirstNameElement.value);
+                localStorage.setItem("fname", FirstNameElement.value);
+                FirstNameElement.style.backgroundColor = "green";
+            }
+            else {
+                FirstNameElement.style.backgroundColor = "red";
+            }
+            
+        });
+        Button2Element.addEventListener("click", () => {
+            if(LastNameElement.value.length > 0) {
+                sessionStorage.setItem("lname", LastNameElement.value);
+                localStorage.setItem("lname", LastNameElement.value);
+                LastNameElement.style.backgroundColor = "green";
+            }
+            else {
+                LastNameElement.style.backgroundColor = "red";
+            }
+            
+        });
+        Button3Element.addEventListener("click", () => {
+            if(MiddleNameElement.value.length > 0) {
+                sessionStorage.setItem("mname", MiddleNameElement.value);
+                localStorage.setItem("mname", MiddleNameElement.value);
+                MiddleNameElement.style.backgroundColor = "green";
+            }
+            else {
+                MiddleNameElement.style.backgroundColor = "red";
+            }
+            
         });
 
-        if(localStorage.getItem("lname")) {
-            LastNameElement.value = localStorage.getItem("lname")
+        function validateForm(event) {
+            if(MiddleNameElement.style.backgroundColor == "red") {
+                event.preventDefault();
+            }
+            if(LastNameElement.style.backgroundColor == "red") {
+                event.preventDefault();
+            }
+            if(FirstNameElement.style.backgroundColor == "red") {
+                event.preventDefault();
+            }
         }
-        document.getElementById("saveBtn2").addEventListener("click", function() {
-            localStorage.setItem("lname", LastNameElement.value);
-        });
-
-        if(localStorage.getItem("mname")) {
-            MiddleNameElement.value = localStorage.getItem("mname")
+        form.addEventListener("submit", validateForm);
+    
         }
-        document.getElementById("saveBtn3").addEventListener("click", function() {
-            localStorage.setItem("mname", MiddleNameElement.value);
-        });
-
-        
-
     </script>
 
 </head>
 <body>
     <fieldset>
         <legend>CPSC 332 10/21 Participation</legend>
-        <form action="submission.html" method="post">
+        <form action="submission.html" method="post" id="form">
             <label>First Name:
                 <input type="text" id="fname" name="fname">
                 <input type="button" value="Save Data" id="saveBtn1">
@@ -74,10 +110,10 @@
                 </label>
             </p>
 
-                <label>Middle Name:
-                    <input type="text" id="mname" name="mname">
-                    <input type="button" value="Save Data" id="saveBtn3">
-                </label>
+            <label>Middle Name:
+                <input type="text" id="mname" name="mname">
+                <input type="button" value="Save Data" id="saveBtn3">
+            </label>
 
 
             <p>
